@@ -12,4 +12,9 @@ export class StockService {
   getStocks(): Observable<Stock[]> {
     return of(MOCKS);
   }
+
+  getStock(ticker: string): Observable<Stock> {
+    return of(MOCKS.find(item => item.ticker === ticker));
+  }
+
 }
