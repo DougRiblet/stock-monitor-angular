@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Stock } from '../stock';
-import { MOCKS } from '../mock-stocks';
+import { StockService } from '../stock.service';
 
 @Component({
   selector: 'app-stock-list',
@@ -9,11 +9,16 @@ import { MOCKS } from '../mock-stocks';
 })
 export class StockListComponent implements OnInit {
 
-  mocks = MOCKS;
-  
-  constructor() { }
+  mocks: Stock[];
+
+  constructor(private stockService: StockService) { }
+
+  getStocks(): void {
+    this.mocks = this.stockService.getStocks();
+  }
 
   ngOnInit() {
+    this.getStocks();
   }
 
 }
