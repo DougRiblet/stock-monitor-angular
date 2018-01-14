@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Stock } from '../stock';
+import { MOCKS } from '../mock-stocks';
 
 @Component({
   selector: 'app-stock-list',
@@ -7,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StockListComponent implements OnInit {
 
+  mocks = MOCKS;
+  
   constructor() { }
 
   ngOnInit() {

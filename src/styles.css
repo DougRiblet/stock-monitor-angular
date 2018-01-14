@@ -26,3 +26,10 @@ header h1 {
 main {
   margin-top: 50px;
 }
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+

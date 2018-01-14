@@ -1,3 +1,7 @@
-<p>
-  stock-list works!
-</p>
+<div class="wrapper">
+  <div *ngFor="let mock of mocks" class="cardstock">
+      <h1>{{ mock.ticker | uppercase }}</h1>
+      <h2>{{ mock.price | number:'1.2-2' }}</h2>
+      <h3>{{ mock.updated | date }}</h3>
+  </div>
+</div>
