@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("assets/chicago-grey.jpg");
+  background-color: #cccccc;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+header {
+  overflow: hidden;
+  background-color: #333355;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 0 120px;
+  font-family: Verdana, Trebuchet, sans-serif;
+}
+
+header h1 {
+  color: #dddddd;
+}
+
+main {
+  margin-top: 50px;
+}
