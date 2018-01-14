@@ -24,12 +24,20 @@ header h1 {
 }
 
 main {
-  margin-top: 50px;
+  margin-top: 100px;
 }
 
 .wrapper {
+  margin: 10px 120px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
+}
+
+.cardstock {
+  background-color: white;
+  padding: 10px;
+  border: 8px solid gray;
+  border-radius: 8px;
 }
 
