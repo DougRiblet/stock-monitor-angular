@@ -1,5 +1,7 @@
-<div class="stock-history">
-  <h1>{{ stock.ticker | uppercase }}</h1>
-  <h2>{{ stock.price | number:'1.2-2' }}</h2>
-  <h3>{{ stock.updated | date }}</h3>
+<div class="history-container">
+  <div class="stock-history">
+    <h1>{{ stock.ticker | uppercase }}</h1>
+    <h2>{{ stock.price | number:'1.2-2' }}</h2>
+    <h3>{{ stock.updated | date }}</h3>
+  </div>
 </div>
