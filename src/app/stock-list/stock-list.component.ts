@@ -14,7 +14,8 @@ export class StockListComponent implements OnInit {
   constructor(private stockService: StockService) { }
 
   getStocks(): void {
-    this.mocks = this.stockService.getStocks();
+    this.stockService.getStocks()
+      .subscribe(data => this.mocks = data);
   }
 
   ngOnInit() {

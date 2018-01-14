@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { of } from 'rxjs/observable/of';
 import { Stock } from './stock';
 import { MOCKS } from './mock-stocks';
 
@@ -7,7 +9,7 @@ export class StockService {
 
   constructor() { }
 
-  getStocks(): Stock[] {
-    return MOCKS;
+  getStocks(): Observable<Stock[]> {
+    return of(MOCKS);
   }
 }
