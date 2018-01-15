@@ -26,19 +26,6 @@ export class StockListComponent implements OnInit {
       });
   }
 
-  // addFirstStock(ticker): void {
-  //   this.stockService.addOneStock(ticker)
-  //     .subscribe(data => {
-  //       let fresh = data["Meta Data"]["3. Last Refreshed"];
-  //       let updated = new Date(fresh);
-  //       let price = +data["Time Series (1min)"][fresh]["4. close"];
-  //       let newStock = {ticker, price, updated};
-  //       this._ngZone.run(() => {
-  //         this.mocks = [newStock];
-  //       });
-  //     });
-  // }
-
   deleteStock(ticker): void {
     this.mocks = this.mocks.filter(item => item.ticker !== ticker);
   }
