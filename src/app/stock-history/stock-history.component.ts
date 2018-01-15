@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { Stock } from '../stock';;
@@ -10,7 +10,8 @@ import { StockService } from '../stock.service';
   styleUrls: ['./stock-history.component.css']
 })
 export class StockHistoryComponent implements OnInit {
-
+  
+  @Input() stock: Stock;
   stockHistory: object;
  
   constructor(
@@ -26,7 +27,11 @@ export class StockHistoryComponent implements OnInit {
   getStockHistory(): void {
     const ticker: string = this.route.snapshot.paramMap.get('ticker');
     this.stockService.getStockHistory(ticker)
-      .subscribe(datum => this.stockHistory = datum["Time Series (Daily)"]);
+      .subscribe(datum => this.formatStockHistory(datum["Time Series (Daily)"]));
+  }
+
+  formatStockHistory(obj): void {
+
   }
  
   goBack(): void {

@@ -1,9 +1,15 @@
-<div class="wrapper">
+<div *ngIf="mocks" class="wrapper">
   <div *ngFor="let mock of mocks" class="cardstock">
     <a routerLink="/{{ mock.ticker | uppercase }}">
       <h1>{{ mock.ticker | uppercase }}</h1>
     </a>
     <h2>{{ mock.price | number:'1.2-2' }}</h2>
     <h3>{{ mock.updated | date }}</h3>
+  </div>
+  <div class="addstock">
+    <input #newTicker
+      (keyup.enter)="addStock(newTicker.value)"
+      (blur)="addStock(newTicker.value); newTicker.value='' ">
+    <button (click)="addStock(newTicker.value)">Add A Stock</button>
   </div>
 </div>

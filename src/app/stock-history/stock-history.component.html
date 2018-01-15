@@ -1,7 +1,12 @@
 <div class="history-container">
-  <div class="stock-history">
-    <h1>{{ stock.ticker | uppercase }}</h1>
-    <h2>{{ stock.price | number:'1.2-2' }}</h2>
-    <h3>{{ stock.updated | date }}</h3>
+  <h1>{{ stock.ticker | uppercase }}</h1>
+  <div class="history-wrapper">
+    <div *ngFor="let mock of mocks" class="cardstock">
+      <a routerLink="/{{ mock.ticker | uppercase }}">
+        <h1>{{ mock.ticker | uppercase }}</h1>
+      </a>
+      <h2>{{ mock.price | number:'1.2-2' }}</h2>
+      <h3>{{ mock.updated | date }}</h3>
+    </div>
   </div>
 </div>

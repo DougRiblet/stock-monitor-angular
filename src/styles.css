@@ -42,6 +42,13 @@ main {
   border-radius: 8px;
 }
 
+.addstock {
+  background-color: #dddddd;
+  padding: 10px;
+  border: 8px solid gray;
+  border-radius: 8px;
+}
+
 .history-container {
   text-align: center;
 }
