@@ -13,13 +13,35 @@ export class StockListComponent implements OnInit {
 
   constructor(private stockService: StockService) { }
 
-  getStocks(): void {
-    this.stockService.getStocks()
-      .subscribe(data => this.mocks = data);
+  addStock(ticker): void {
+    this.stockService.addOneStock(ticker)
+      .subscribe(function(data){
+        let fresh = data["Meta Data"]["3. Last Refreshed"];
+        let updated = new Date(fresh);
+        let price = +data["Time Series (1min)"][fresh]["4. close"];
+        let newStock = {ticker, price, updated};
+        this.mocks.push(newStock);
+      });
+  }
+
+  addFirstStock(ticker): void {
+    this.stockService.addOneStock(ticker)
+      .subscribe(function(data){
+        let fresh = data["Meta Data"]["3. Last Refreshed"];
+        let updated = new Date(fresh);
+        let price = +data["Time Series (1min)"][fresh]["4. close"];
+        let newStock = {ticker, price, updated};
+        this.mocks = [newStock];
+        console.log(this.mocks);
+      });
+  }
+
+  deleteStock(ticker): void {
+    this.mocks = this.mocks.filter(item => item.ticker !== ticker);
   }
 
   ngOnInit() {
-    this.getStocks();
+    this.addFirstStock('WMT');
   }
 
 }
