@@ -12,7 +12,7 @@ body {
 
 header {
   overflow: hidden;
-  background-color: #333355;
+  background-color: firebrick;
   position: fixed;
   top: 0;
   width: 100%;
@@ -42,6 +42,16 @@ main {
   border-radius: 8px;
 }
 
+.cardstock a {
+  color: firebrick;
+  text-decoration: none;
+}
+
+.cardstock a:hover {
+  color: #d95555;
+  text-decoration: underline;
+}
+
 .addstock {
   background-color: #dddddd;
   padding: 10px;
@@ -49,16 +59,37 @@ main {
   border-radius: 8px;
 }
 
+.lastup {
+  font-size: 70%;
+}
+
 .history-container {
   text-align: center;
 }
 
-.stock-history {
+.history-box {
   background-color: white;
+  width: 690px;
   margin: 30px auto;
   text-align: left;
   padding: 20px;
-  width: 660px;
   border: 8px solid gray;
   border-radius: 8px;
 }
+
+.history-box h1 {
+  color: firebrick;
+}
+
+.history-wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+}
+
+.history-day {
+  border-top: 2px solid gray;
+  font-size: 85%;
+}
+
+

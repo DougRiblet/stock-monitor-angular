@@ -21,7 +21,7 @@ export class StockService {
   }
 
   getStockHistory(ticker: string) {
-    let url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${ticker}apikey=2FFXT4V84WCOQ5GG`;
+    let url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${ticker}&apikey=2FFXT4V84WCOQ5GG`;
 
     return this.http.get(url)
       .pipe(

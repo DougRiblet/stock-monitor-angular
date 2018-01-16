@@ -4,7 +4,7 @@
       <h1>{{ mock.ticker | uppercase }}</h1>
     </a>
     <h2>{{ mock.price | number:'1.2-2' }}</h2>
-    <h3>{{ mock.updated | date }}</h3>
+    <p class="lastup">last updated:<br/>{{ mock.updated | date:'short' }}</p>
     <button (click)="deleteStock(mock.ticker)">Delete</button>
   </div>
   <div class="addstock">

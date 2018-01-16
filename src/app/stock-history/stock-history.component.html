@@ -1,12 +1,16 @@
 <div class="history-container">
-  <h1>{{ stock.ticker | uppercase }}</h1>
-  <div class="history-wrapper">
-    <div *ngFor="let mock of mocks" class="cardstock">
-      <a routerLink="/{{ mock.ticker | uppercase }}">
-        <h1>{{ mock.ticker | uppercase }}</h1>
-      </a>
-      <h2>{{ mock.price | number:'1.2-2' }}</h2>
-      <h3>{{ mock.updated | date }}</h3>
+  <div class="history-box">
+    <h1>{{ tickerSymbol | uppercase }}</h1>
+    <p>Price history for last thirty business days</p>
+    <div class="history-wrapper">
+      <div *ngFor="let hist of stockHistory" class="history-day">
+        <p class="historydate">{{ hist.date }}</p>
+        <p class="historydatum">Open: {{ hist.open | number:'1.2-2' }}
+        <br/>High: {{ hist.high | number:'1.2-2' }}
+        <br/>Low: {{ hist.low | number:'1.2-2' }}
+        <br/>Close: {{ hist.close | number:'1.2-2' }}</p>
+      </div>
     </div>
+    <button (click)="goBack()">Back</button>
   </div>
 </div>
